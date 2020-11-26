@@ -23,46 +23,63 @@ class App extends Component{
     return(
       <div>
           
-          <Mui.Container fixed>
-                <br />
-                <Mui.ButtonGroup color="primary" aria-label="outlined primary button group">
-                    <Mui.Button href="/users">User</Mui.Button>
-                    <Mui.Button href="/posts">Posts</Mui.Button>
-                    <Mui.Button href="/comments">Comments</Mui.Button>
-                </Mui.ButtonGroup>
+          <nav>
+          <Mui.AppBar>
+                        <Mui.Toolbar>
+                        <a href="#!" class="brand-logo right">JSONFY</a>
+                            <Mui.Typography>
+                    <div class="nav-wrapper">
+                    <ul class="left hide-on-med-and-down">
+                        <li><a href="/users">Users</a></li>
+                        <li><a href="/comments">Comments</a></li>
+                        <li><a href="/posts">Posts</a></li>
+                        <li><a href="/todos">Todos</a></li>
+                        <li><a href="/albums">Albums</a></li>
+                        <li><a href="/photos">Photos</a></li>
+                        <li><a href="/categories">Categories</a></li>
+                        <li><a href="/brands">Brands</a></li>
+                        <li><a href="/items">Items</a></li>
+                    </ul>
+                    </div>
+                    </Mui.Typography>
+                    </Mui.Toolbar>
+                    </Mui.AppBar>
+                    </nav>
 
-        <h3 align="center">Data jsonfy Users</h3>
-          <table border="1" cellPadding="20">
-            <tr bgcolor="#6600CC">
-              <td>ID</td>
-              <td>NAME</td>
-              <td>USERNAME</td>
-              <td>EMAIL</td>
-              <td>PASSWORD</td>
-              <td>AGE</td>
-              <td>WEBSITE</td>
-              <td>PHONE</td>
-              <td>DATE ADD</td>
-              <td>DATE UPD</td>
-              <td>PASSWORD MD5</td>
-            </tr>
-            {data.map(todo =>
-              <tr bgcolor="#CCFFFF" hey={todo.id}>
-                <td>{todo.id}</td>
-                <td>{todo.name}</td>
-                <td>{todo.username}</td>
-                <td>{todo.email}</td>
-                <td>{todo.password}</td>
-                <td>{todo.age}</td>
-                <td>{todo.website}</td>
-                <td>{todo.phone}</td>
-                <td>{todo.date_add}</td>
-                <td>{todo.date_upd}</td>
-                <td>{todo.password_md5}</td>
-              </tr>
-              )}
-          </table>
-          </Mui.Container>
+                  
+                  <h3 align="center">Data jsonfy Users</h3>
+                  <Mui.Container fixed>
+                    <table border="1" cellPadding="20">
+                      <tr bgcolor="#81c784">
+                        <td>ID</td>
+                        <td>NAME</td>
+                        <td>USERNAME</td>
+                        <td>EMAIL</td>
+                        <td>PASSWORD</td>
+                        <td>AGE</td>
+                        <td>WEBSITE</td>
+                        <td>PHONE</td>
+                        <td>DATE ADD</td>
+                        <td>DATE UPD</td>
+                        <td>PASSWORD MD5</td>
+                      </tr>
+                        {data.map(todo =>
+                          <tr hey={todo.id}>
+                            <td>{todo.id}</td>
+                            <td>{todo.name}</td>
+                            <td>{todo.username}</td>
+                            <td>{todo.email}</td>
+                            <td>{todo.password}</td>
+                            <td>{todo.age}</td>
+                            <td>{todo.website}</td>
+                            <td>{todo.phone}</td>
+                            <td>{todo.date_add}</td>
+                            <td>{todo.date_upd}</td>
+                            <td>{todo.password_md5}</td>
+                          </tr>
+                        )}
+                    </table>
+                    </Mui.Container>
       </div>
     );
   }

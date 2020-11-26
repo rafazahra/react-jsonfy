@@ -11,7 +11,7 @@ class App extends Component{
   }
 
   componentDidMount() {
-    const apiUrl = 'https://jsonfy.com/posts';
+    const apiUrl = 'https://jsonfy.com/todos';
     fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => this.setState({ data: data }));
@@ -46,31 +46,9 @@ class App extends Component{
                     </Mui.AppBar>
                     </nav>
 
-        <h3 align="center">Data jsonfy Posts</h3>
-        <Mui.Container fixed>
-          <table border="1" cellPadding="20">
-            <tr bgcolor="#81c784">
-              <td>ID</td>
-              <td>USE POS FK</td>
-              <td>TITLE</td>
-              <td>EXCERPT</td>
-              <td>BODY</td>
-              <td>DATE ADD</td>
-              <td>DATE UPD</td>
-            </tr>
-            {data.map(todo =>
-              <tr hey={todo.id}>
-                <td>{todo.id}</td>
-                <td>{todo.use_pos_fk}</td>
-                <td>{todo.title}</td>
-                <td>{todo.excerpt}</td>
-                <td>{todo.body}</td>
-                <td>{todo.date_add}</td>
-                <td>{todo.date_upd}</td>
-              </tr>
-              )}
-          </table>
-          </Mui.Container>
+        <h3 align="center">Data jsonfy Todos</h3>
+          
+  
       </div>
     );
   }
